@@ -1,0 +1,99 @@
+---
+title: Install cli_debrid
+icon: material/download
+---
+
+# Step 3 — Install cli_debrid
+
+Select your platform below. All methods install the same app — only the steps differ.
+
+---
+
+=== "Unraid"
+
+    The easiest method on Unraid is via Community Applications using the pre-configured template.
+
+    **Full guide:** [:octicons-arrow-right-24: Unraid installation](../installation/unraid.md){ .md-button }
+
+    **Quick steps:**
+
+    1. Open the **Apps** tab in Unraid
+    2. Search for `CLI_Debrid`
+    3. Click **Install** on the template by **mash2k3**
+    4. Set your paths and timezone
+    5. Click **Apply**
+
+    Once running, go to `http://YOUR_UNRAID_IP:5000`
+
+=== "Docker / Linux"
+
+    Works on any Linux host, macOS, or Windows with Docker Desktop.
+
+    **Full guide:** [:octicons-arrow-right-24: Docker installation](../installation/docker.md){ .md-button }
+
+    **Quick steps:**
+
+    ```bash
+    mkdir -p ~/cli_debrid && cd ~/cli_debrid
+    curl -O https://raw.githubusercontent.com/godver3/cli_debrid/main/docker-compose.yml
+    # Edit docker-compose.yml — update volume paths and timezone
+    docker compose up -d
+    ```
+
+    Once running, go to `http://YOUR_SERVER_IP:5000`
+
+=== "Ubuntu / Debian"
+
+    **Full guide:** [:octicons-arrow-right-24: Ubuntu installation](../installation/ubuntu.md){ .md-button }
+
+    **Quick steps:**
+
+    1. Install Docker Engine (not Docker Desktop)
+    2. Create your compose file with correct volume paths
+    3. Run `docker compose up -d`
+
+    Once running, go to `http://YOUR_SERVER_IP:5000`
+
+=== "Proxmox"
+
+    Run cli_debrid in an LXC container or a VM with Docker.
+
+    **Full guide:** [:octicons-arrow-right-24: Proxmox installation](../installation/proxmox.md){ .md-button }
+
+    **Recommended approach:** Use a Debian/Ubuntu LXC, install Docker inside it, then follow the Docker steps.
+
+=== "TrueNAS"
+
+    Run cli_debrid as a TrueNAS App (SCALE) or in a jail (CORE).
+
+    **Full guide:** [:octicons-arrow-right-24: TrueNAS installation](../installation/truenas.md){ .md-button }
+
+    **TrueNAS SCALE:** Use the Docker Compose method inside a Custom App or deploy via TrueCharts if available.
+
+=== "Windows"
+
+    A native Windows executable is available — no Docker required.
+
+    **Full guide:** [:octicons-arrow-right-24: Windows installation](../installation/windows.md){ .md-button }
+
+    !!! warning "Symlinks on Windows"
+        Windows requires Developer Mode enabled for symlink support. Plex does not support symlinks on Windows — use Jellyfin instead, or run cli_debrid in Docker.
+
+---
+
+## First launch
+
+Regardless of platform, when you first open `http://YOUR_IP:5000` you will see:
+
+**Phalanx DB prompt** — Select **No / Disable** unless you specifically want this experimental feature.
+
+The **onboarding wizard** will then launch automatically and guide you through initial configuration.
+
+!!! tip
+    Have your API keys and paths from [Step 1](prerequisites.md) and [Step 2](mount.md) ready before proceeding through onboarding.
+
+---
+
+## Next step
+
+[:octicons-arrow-right-24: Step 4 — Configure cli_debrid](configure.md){ .md-button .md-button--primary }

@@ -1,0 +1,166 @@
+site_name: cli_debrid
+site_description: Automated media management powered by debrid services
+site_url: https://godver3.github.io/cli_debrid/
+repo_url: https://github.com/godver3/cli_debrid
+repo_name: godver3/cli_debrid
+edit_uri: edit/dev/cli/docs/
+
+hooks:
+  - hooks.py
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  logo: assets/images/logo.png
+  favicon: assets/images/favicon.png
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.expand
+    - navigation.tabs
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.sections
+    - navigation.tracking
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.action.edit
+    - content.code.copy
+    - content.code.annotate
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+plugins:
+  - search
+  - tags
+  - glightbox
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.details
+  - pymdownx.keys
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+
+extra_css:
+  - assets/css/extra.css
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/godver3/cli_debrid
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/ynqnXGJ4hU
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - getting-started/index.md
+    - "Step 1: Prerequisites": getting-started/prerequisites.md
+    - "Step 2: Mount debrid storage": getting-started/mount.md
+    - "Step 3: Install cli_debrid": getting-started/install.md
+    - "Step 4: Configure": getting-started/configure.md
+    - "Step 5: Add scrapers": getting-started/scrapers.md
+    - "Step 6: Add content sources": getting-started/content-sources.md
+    - What's next: getting-started/whats-next.md
+  - Installation:
+    - installation/index.md
+    - Docker: installation/docker.md
+    - Unraid: installation/unraid.md
+    - Ubuntu / Debian: installation/ubuntu.md
+    - Proxmox: installation/proxmox.md
+    - TrueNAS: installation/truenas.md
+    - Windows: installation/windows.md
+    - Portainer / Dockge / Dockhand: installation/portainer-dockge.md
+    - Updating: installation/updating.md
+  - Integrations:
+    - integrations/index.md
+    - Zurg + rclone: integrations/zurg.md
+    - Decypharr: integrations/decypharr.md
+    - Plex: integrations/plex.md
+    - Jellyfin: integrations/jellyfin.md
+    - Seerr: integrations/seerr.md
+    - OpenClaw: integrations/openclaw.md
+  - Scrapers:
+    - scrapers/index.md
+    - Zilean: scrapers/zilean.md
+    - Torrentio: scrapers/torrentio.md
+    - MediaFusion: scrapers/mediafusion.md
+    - AIOStreams: scrapers/aiostreams.md
+    - Jackett: scrapers/jackett.md
+    - Prowlarr: scrapers/prowlarr.md
+    - Nyaa: scrapers/nyaa.md
+  - Configuration:
+    - configuration/index.md
+    - UI Settings: configuration/ui-settings.md
+    - Required Settings: configuration/required.md
+    - Additional Settings: configuration/additional.md
+    - Scrapers: configuration/scrapers.md
+    - Version Settings: configuration/versions.md
+    - Content Sources: configuration/content-sources.md
+    - Advanced Settings: configuration/advanced.md
+    - Notifications: configuration/notifications.md
+    - Manage Users: configuration/manage-users.md
+  - Features:
+    - features/index.md
+    - Dashboard: features/dashboard.md
+    - Library: features/library.md
+    - Discover: features/discover.md
+    - Queues: features/queues.md
+    - Debrid Manager: features/debrid-manager.md
+    - Overlays: features/overlays.md
+    - Upgrade Hub: features/upgrade-hub.md
+    - AI Butler: features/ai-butler.md
+    - Plex Labels: features/plex-labels.md
+    - Performance: features/performance.md
+    - Calendar: features/calendar.md
+    - Task Manager: features/task-manager.md
+    - Phalanx DB: features/phalanx-db.md
+    - Scraper Tester: features/scraper-tester.md
+    - Database Browser: features/database.md
+    - Debug Functions: features/debug-functions.md
+    - Other Tools: features/other-tools.md
+  - FAQ: faq.md
+
